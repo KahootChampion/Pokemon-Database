@@ -9,8 +9,8 @@
   cursor: pointer;
 }
 .pokemon-sprite {
-  height: 128px;
-  width: 128px;
+  max-width: 128px;
+  max-height: 128px;
 }
 
 .pokemon-name {

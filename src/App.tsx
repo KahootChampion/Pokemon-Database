@@ -5,26 +5,47 @@ import Pokemon_Tile from "./Components/Pokemon_Tile";
 interface Pokemon {
   name: string;
   url: string;
+  types: PokemonType[];
+}
+
+interface PokemonType {
+  type: { name: string };
 }
 
 interface PokemonResponse {
   results: Pokemon[];
 }
 
+interface PokemonDetails {
+  id: number;
+  types: PokemonType[];
+}
+
 function App() {
   const POKEMON_LIMIT = 20;
 
   const [data, setData] = useState<PokemonResponse>({ results: [] });
-
   useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${POKEMON_LIMIT}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setData(data);
-        console.log(`From useEffect Hook`);
-        console.log(data);
-      })
-      .catch((error) => console.log(error));
+    fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${POKEMON_LIMIT}`).then(
+      (response) =>
+        response.json().then((data: PokemonResponse) => {
+          const PokemonPromises = data.results.map((singleResponse) =>
+            fetch(`${singleResponse.url}`)
+              .then((response) => response.json())
+              .then((newData: PokemonDetails) => {
+                return { id: newData.id, types: newData.types };
+              })
+          );
+          Promise.all(PokemonPromises).then((finalData) => {
+            const mergedData = data.results.map((pokemon, index) => ({
+              ...pokemon,
+              ...finalData[index],
+            }));
+            console.log(mergedData);
+            setData({ results: mergedData });
+          });
+        })
+    );
   }, []);
 
   const findPokemonNumber = (url: string): string => {
@@ -50,6 +71,10 @@ function App() {
           )}.png`}
           pokemonNum={findPokemonNumber(pokemon.url)}
           pokemonName={capitalizeWord(pokemon.name)}
+          pokemonFirstType={pokemon.types[0].type["name"]}
+          pokemonSecondType={
+            pokemon.types[1] ? pokemon.types[1].type["name"] : undefined
+          }
         ></Pokemon_Tile>
       ))}
     </div>
