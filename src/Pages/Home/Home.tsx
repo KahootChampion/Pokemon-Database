@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import "./Home.css";
-import Pokemon_Tile from "../Components/Pokemon_Tile";
+import Pokemon_Tile from "./Components/Pokemon_Tile";
 import {
   findPokemonNumber,
   capitalizeWord,
-} from "../Utils/TextUtils/TextUtils";
+} from "../../Utils/TextUtils/TextUtils";
 import { Link } from "react-router-dom";
 
 interface Pokemon {
@@ -27,7 +27,7 @@ interface PokemonDetails {
 }
 
 function Home() {
-  const POKEMON_LIMIT = 1500;
+  const POKEMON_LIMIT = 20;
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const [data, setData] = useState<PokemonResponse>({ results: [] });

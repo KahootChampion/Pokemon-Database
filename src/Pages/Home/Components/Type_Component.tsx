@@ -1,6 +1,6 @@
 import React from "react";
-import "./Type_Component.css";
-import { capitalizeWord } from "../Utils/TextUtils/TextUtils";
+import TypeComponentCss from "./Type_Component.module.css";
+import { capitalizeWord } from "../../../Utils/TextUtils/TextUtils";
 
 type IType_Component = {
   firstType: string;
@@ -49,7 +49,7 @@ export default function Type_Component({
   secondType,
 }: IType_Component) {
   return (
-    <h5 className="type-styling">
+    <h5 className={TypeComponentCss.type_styling}>
       <span style={{ color: getTypeColorMapping(firstType) }}>
         {" "}
         {capitalizeWord(firstType)}

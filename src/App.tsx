@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "./Pages/Home";
-import PokemonInfo from "./Pages/PokemonInfo";
+import Home from "./Pages/Home/Home";
+import PokemonInfo from "./Pages/PokemonInfo/PokemonInfo";
 
 function App() {
   return (

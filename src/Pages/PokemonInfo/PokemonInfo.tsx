@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import PokemonInfoCss from "./PokemonInfo.module.css";
 
 type Props = {};
 
@@ -17,11 +18,11 @@ const PokemonInfo = (props: Props) => {
   }, []);
 
   return (
-    <>
+    <div className={PokemonInfoCss.overall_container}>
       <img
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
       />
-    </>
+    </div>
   );
 };
 
