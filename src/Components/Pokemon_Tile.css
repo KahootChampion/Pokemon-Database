@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  padding: 0;
 }
 .tile-wrapper {
   display: flex;
@@ -8,6 +9,10 @@
   gap: 0.2rem;
   cursor: pointer;
 }
+
+.tile-wrapper:hover {
+  background-color: lightblue;
+}
 .pokemon-sprite {
   max-width: 128px;
   max-height: 128px;
@@ -15,10 +20,6 @@
 
 .pokemon-name {
   color: #2769be;
-}
-
-.pokemon-name:hover {
-  color: black;
 }
 
 .pokemon-number {

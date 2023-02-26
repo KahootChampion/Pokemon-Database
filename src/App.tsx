@@ -23,7 +23,7 @@ interface PokemonDetails {
 }
 
 function App() {
-  const POKEMON_LIMIT = 20;
+  const POKEMON_LIMIT = 1500;
 
   const [data, setData] = useState<PokemonResponse>({ results: [] });
   useEffect(() => {
