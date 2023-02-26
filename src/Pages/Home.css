@@ -24,7 +24,7 @@
   text-align: center;
 }
 
-.display-right {
+.display-center {
   display: flex;
   flex-direction: row;
   justify-content: center;
