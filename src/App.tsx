@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Pokemon_Tile from "./Components/Pokemon_Tile";
+import { findPokemonNumber, capitalizeWord } from "./Utils/TextUtils/TextUtils";
 
 interface Pokemon {
   name: string;
@@ -47,19 +48,6 @@ function App() {
         })
     );
   }, []);
-
-  const findPokemonNumber = (url: string): string => {
-    const urlWithoutFinalSlash: string = url.slice(0, -1);
-    const number: string = urlWithoutFinalSlash.substring(
-      urlWithoutFinalSlash.lastIndexOf("/") + 1
-    );
-    return number;
-  };
-
-  const capitalizeWord = (word: string): string => {
-    const wordToReturn = word.charAt(0).toUpperCase() + word.slice(1);
-    return wordToReturn;
-  };
 
   return (
     <div className="App">
