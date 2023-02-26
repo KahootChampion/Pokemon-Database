@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import PokemonInfoCss from "./PokemonInfo.module.css";
+import StatComponent from "./Components/StatComponent";
 
 type Props = {};
 
@@ -19,9 +20,21 @@ const PokemonInfo = (props: Props) => {
 
   return (
     <div className={PokemonInfoCss.overall_container}>
-      <img
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
-      />
+      <div className={PokemonInfoCss.pokemon_tile}>
+        <img
+          className={PokemonInfoCss.pokemon_image}
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
+        />
+      </div>
+      <div className={PokemonInfoCss.stats_and_defense_container}>
+        <div className={PokemonInfoCss.stats_tile}>
+          <h1>Base Stats</h1>
+          <StatComponent></StatComponent>
+        </div>
+        <div className={PokemonInfoCss.defense_tile}>
+          <h1>Type defenses</h1>
+        </div>
+      </div>
     </div>
   );
 };
