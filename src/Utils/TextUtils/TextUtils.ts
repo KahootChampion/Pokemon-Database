@@ -6,7 +6,10 @@ export const findPokemonNumber = (url: string): string => {
   return number;
 };
 
-export const capitalizeWord = (word: string): string => {
-  const wordToReturn = word.charAt(0).toUpperCase() + word.slice(1);
+export const capitalizeWord = (word: string | undefined): string => {
+  let wordToReturn = "";
+  if (word !== undefined) {
+    wordToReturn = word.charAt(0).toUpperCase() + word.slice(1);
+  }
   return wordToReturn;
 };
