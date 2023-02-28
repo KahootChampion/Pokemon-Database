@@ -28,28 +28,23 @@ const PokemonInfo = (props: Props) => {
 
   return (
     <div className={PokemonInfoCss.overall_container}>
-      <div className={PokemonInfoCss.pokemon_tile}>
+      <div className={PokemonInfoCss.pokedex_data_container}>
         <img
           className={PokemonInfoCss.pokemon_image}
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
         />
       </div>
-      <div className={PokemonInfoCss.stats_and_defense_container}>
-        <div className={PokemonInfoCss.stats_tile}>
-          <h1>Base Stats</h1>
-        </div>
-        <div className={PokemonInfoCss.defense_tile}>
-          <h1>Type defenses</h1>
-        </div>
+      <div className={PokemonInfoCss.base_stats_container}>
+        <h1>Base Stats</h1>
+        {pokemonInfoObject.stats?.map((pokemonStat) => {
+          return (
+            <StatComponent
+              statName={capitalizeWord(pokemonStat.stat.name)}
+              baseStat={pokemonStat.base_stat}
+            ></StatComponent>
+          );
+        })}
       </div>
-      {pokemonInfoObject.stats?.map((pokemonStat) => {
-        return (
-          <StatComponent
-            statName={capitalizeWord(pokemonStat.stat.name)}
-            baseStat={pokemonStat.base_stat}
-          ></StatComponent>
-        );
-      })}
     </div>
   );
 };

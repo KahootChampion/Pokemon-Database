@@ -3,19 +3,22 @@
   padding: 0;
 }
 .overall_container {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+    "pokedex_data_container training_container"
+    "base_stats_container breeding_container";
+}
+
+.base_stats_container {
+  grid-area: base_stats_container;
   display: flex;
   flex-direction: column;
-}
-
-.stats_and_defense_container {
-  display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  margin-left: 2em;
 }
 
-.pokemon_tile {
-}
-
-.pokemon_image {
-  height: 300px;
+.pokedex_data_container {
+  grid-area: pokedex_data_container;
 }
