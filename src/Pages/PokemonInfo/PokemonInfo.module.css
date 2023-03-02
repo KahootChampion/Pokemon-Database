@@ -20,7 +20,6 @@
   flex-wrap: wrap;
   margin-left: 2em;
   max-height: 100%;
-  overflow-y: auto;
 }
 
 .pokedex_data_container {

@@ -7,12 +7,12 @@
   flex-direction: row;
   border-top: 1px solid;
   border-bottom: 1px solid;
-  padding-bottom: 2px;
-  padding-top: 2px;
   max-width: 100%;
   align-items: center;
   border-color: var(--border_color);
   background-color: #fff;
+  padding-top: 2px; /* adjust padding as necessary */
+  padding-bottom: 2px; /* adjust padding as necessary */
 }
 
 .stat_bar_container {
@@ -21,7 +21,7 @@
 }
 
 .stat_bar {
-  height: 10px;
+  height: 1rem;
   background-color: blue;
 }
 
@@ -29,4 +29,8 @@
   padding-right: 1em;
   text-align: right;
   flex-basis: 10%;
+}
+
+.stat_item:nth-child(1) {
+  flex-basis: 15%;
 }
