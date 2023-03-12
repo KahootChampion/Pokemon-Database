@@ -24,11 +24,42 @@
 
 .pokedex_data_container {
   grid-area: pokedex_data_container;
-  max-height: 100%;
-  overflow-y: auto;
+  max-height: 50vh;
 }
 
 .pokemon_image {
   max-width: 100%;
-  max-height: 50vh;
+  max-height: 100%;
+}
+
+@media (max-height: 400px) {
+  .overall_container {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .base_stats_container {
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  .pokedex_data_container {
+    flex-grow: 1;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .pokemon_image {
+    height: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  .overall_container {
+    width: 550px;
+  }
 }
