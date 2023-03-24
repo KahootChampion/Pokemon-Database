@@ -1,6 +1,6 @@
 import React from "react";
-import PokemonTileCss from "./Pokemon_Tile.module.css";
-import Type_Component from "./Type_Component";
+import PokemonTileCss from "./PokemonTile.module.css";
+import Type_Component from "./TypeComponent";
 
 type IPokemon_Tile = {
   imageSrc: string;

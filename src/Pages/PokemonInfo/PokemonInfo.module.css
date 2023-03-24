@@ -10,7 +10,6 @@
   grid-template-areas:
     "pokedex_data_container training_container"
     "base_stats_container breeding_container";
-  min-height: 100vh; /* Set a minimum height for the grid container */
 }
 
 .base_stats_container {
@@ -24,7 +23,7 @@
 
 .pokedex_data_container {
   grid-area: pokedex_data_container;
-  max-height: 50vh;
+  max-height: 40vh;
 }
 
 .pokemon_image {

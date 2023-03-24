@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Home.css";
-import Pokemon_Tile from "./Components/Pokemon_Tile";
+import Pokemon_Tile from "./Components/PokemonTile";
 import {
   findPokemonNumber,
   capitalizeWord,

@@ -1,5 +1,5 @@
 import React from "react";
-import TypeComponentCss from "./Type_Component.module.css";
+import TypeComponentCss from "./TypeComponent.module.css";
 import { capitalizeWord } from "../../../Utils/TextUtils/TextUtils";
 
 type IType_Component = {
