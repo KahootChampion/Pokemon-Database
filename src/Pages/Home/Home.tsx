@@ -27,7 +27,7 @@ interface PokemonDetails {
 }
 
 function Home() {
-  const POKEMON_LIMIT = 20;
+  const POKEMON_LIMIT = 150;
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const [data, setData] = useState<PokemonResponse>({ results: [] });
